@@ -8,27 +8,39 @@
     <title>Css</title>
     <!-- Internal CSS -->
     <style>
-        .bk {
-            background-color: coral;
-            width: 250px;
-            height: 250px;
-            margin: 5px;
+        * {
+            margin: 0px;
+            padding: 0px;
             box-sizing: border-box;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            padding-left: 50px;
-            padding-right: 50px;
-            margin: 100px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .parent {
+            background-color: blueviolet;
+            color: chartreuse;
+            height: 130px;
+            font-size: 3em;
+        }
+        
+        .s {
+            background-color: cornflowerblue;
+            color: crimson;
+            padding: 10px;
+            text-align: center;
+            /* text align can only be used on block element */
         }
     </style>
+    <!-- Rem and em change font size according to the device -->
 </head>
+<div class="parent">
+    <h1>Heading</h1>
+</div>
+<div class="s">
+    <h1>Some Heading</h1>
+</div>
 
 
 <body>
-    <div class="bk">
-        <h1>Box Model</h1>
-    </div>
-
 
 
 </body>
