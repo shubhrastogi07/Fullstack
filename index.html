@@ -10,59 +10,37 @@
     <style>
         * {
             padding: 0;
-            margin: 4px;
+            margin: 0;
             box-sizing: border-box;
+            font-family: Metropolis;
+            margin: 4px;
         }
         
-        div.parent div {
-            background-color: magenta;
+        div.parent {
+            background-color: #111;
+            min-height: 200px;
         }
         
-        div.p div:nth-child(2) {
-            color: gold;
+        div.child {
+            background-color: #ffbf00;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(0, -1.16, 0, 0.68);
         }
         
-        h2:hover {
-            background-color: greenyellow;
-            cursor: pointer;
-        }
-        
-        div::selection {
-            background-color: hotpink;
-        }
-        
-        h2::after {
-            content: "after";
-            color: indigo;
-        }
-        
-        h2::before {
-            content: "before";
-            color: indigo;
-        }
-        
-        input:focus {
-            background-color: lawngreen;
+        div.parent:hover div.child {
+            background-color: cyan;
+            transform: translateX(500px);
         }
     </style>
 </head>
 
 <body>
     <div class="parent">
-        <div>i'm a div</div>
-        <h1>I'm a heading</h1>
-        <h1>I'm a heading</h1>
-        <h2>I'm a heading</h2>
-        <h2>I'm a heading</h2>
-        <div>I'm a div again</div>
+        <div class="child"></div>
     </div>
-    <div class="p">
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit a hic amet deserunt delectus quia. Rerum laudantium ab quam aut repellendus quisquam fuga! Cumque, porro blanditiis velit quasi iure aliquam!</div>
-        <div>I'm a div 2</div>
-        <div>I'm a div again</div>
-    </div>
-    <input type="text" />
-
 </body>
 
 </html>
