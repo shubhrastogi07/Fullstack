@@ -10,38 +10,35 @@
     <style>
         * {
             padding: 0;
-            margin: 10px;
+            margin: 4px;
             box-sizing: border-box;
         }
         
-        .background {
-            color: #fff;
-            background-color: orange;
+        div.parent div {
+            background-color: magenta;
         }
         
-        h1.background {
-            background-color: tomato;
-        }
-        
-        h2.background {
-            background-color: turquoise;
-        }
-        
-        h3.background {
-            background-color: blueviolet
-        }
-        
-        h2.background#unique {
-            background-color: crimson;
+        div.p div:nth-child(2) {
+            color: gold;
         }
     </style>
 </head>
 
 <body>
-    <h1 class="background">Heading One</h1>
-    <h2 class="background">Heading Two</h2>
-    <h3 class="background">Heading Three</h3>
-    <h2 id="unique" class="background">Heading Two</h2>
+    <div class="parent">
+        <div>i'm a div</div>
+        <h1>I'm a heading</h1>
+        <h1>I'm a heading</h1>
+        <h2>I'm a heading</h2>
+        <h2>I'm a heading</h2>
+        <div>I'm a div again</div>
+    </div>
+    <div class="p">
+        <div>i'm a div</div>
+        <div>I'm a div 2</div>
+        <div>I'm a div again</div>
+    </div>
+
 </body>
 
 </html>
