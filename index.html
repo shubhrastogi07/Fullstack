@@ -21,6 +21,29 @@
         div.p div:nth-child(2) {
             color: gold;
         }
+        
+        h2:hover {
+            background-color: greenyellow;
+            cursor: pointer;
+        }
+        
+        div::selection {
+            background-color: hotpink;
+        }
+        
+        h2::after {
+            content: "after";
+            color: indigo;
+        }
+        
+        h2::before {
+            content: "before";
+            color: indigo;
+        }
+        
+        input:focus {
+            background-color: lawngreen;
+        }
     </style>
 </head>
 
@@ -34,10 +57,11 @@
         <div>I'm a div again</div>
     </div>
     <div class="p">
-        <div>i'm a div</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit a hic amet deserunt delectus quia. Rerum laudantium ab quam aut repellendus quisquam fuga! Cumque, porro blanditiis velit quasi iure aliquam!</div>
         <div>I'm a div 2</div>
         <div>I'm a div again</div>
     </div>
+    <input type="text" />
 
 </body>
 
