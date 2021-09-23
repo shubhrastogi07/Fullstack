@@ -10,36 +10,38 @@
     <style>
         * {
             padding: 0;
-            margin: 0;
+            margin: 10px;
             box-sizing: border-box;
         }
         
-        .parent {
-            height: 500px;
-            background-color: black;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+        .background {
+            color: #fff;
+            background-color: orange;
         }
         
-        .child {
-            width: 100px;
-            height: 150px;
-            background-color: orange;
-            margin: 10px;
+        h1.background {
+            background-color: tomato;
+        }
+        
+        h2.background {
+            background-color: turquoise;
+        }
+        
+        h3.background {
+            background-color: blueviolet
+        }
+        
+        h2.background#unique {
+            background-color: crimson;
         }
     </style>
 </head>
 
 <body>
-    <div class="parent">
-
-        <div class="child"></div>
-        <div style="background-color: tomato;" class="child"></div>
-        <div style="background-color: teal;" class="child"></div>
-
-    </div>
+    <h1 class="background">Heading One</h1>
+    <h2 class="background">Heading Two</h2>
+    <h3 class="background">Heading Three</h3>
+    <h2 id="unique" class="background">Heading Two</h2>
 </body>
 
 </html>
