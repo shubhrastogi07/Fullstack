@@ -9,73 +9,37 @@
     <!-- Internal CSS -->
     <style>
         * {
-            margin: 0px;
-            padding: 0px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+            margin: 0;
             box-sizing: border-box;
-            background-color: rgb(0, 0, 0);
         }
         
-        div {
-            width: 500px;
-            height: 545px;
-            background-color: white;
-            border-radius: 20px;
+        .parent {
+            height: 500px;
+            background-color: black;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
         }
         
-        img {
-            width: 500px;
-            height: 300px;
-            border-radius: 20px;
-        }
-        
-        h2 {
-            text-align: center;
-            background-color: white;
-        }
-        
-        p {
-            margin: 10px;
-            text-align: center;
-            background-color: white;
-        }
-        
-        button {
-            margin-left: 200px;
+        .child {
             width: 100px;
-            height: 30px;
-            background-color: tomato;
-            border-radius: 10px;
-            color: white;
-        }
-        
-        .bot {
-            width: 40px;
-            height: 40px;
-            text-align: center;
-            background-color: red;
-            position: fixed;
-            top: 10px;
-            right: 0px;
-            color: seashell;
+            height: 150px;
+            background-color: orange;
+            margin: 10px;
         }
     </style>
-    <!-- Rem and em change font size according to the device -->
 </head>
 
-
 <body>
-    <div class="container">
-        <img src=" https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900 " alt=" ">
-        <h2>Paris</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores optio, reprehenderit dignissimos libero perferendis ea pariatur quidem iste quos nihil minima error aliquam dolorem, enim alias nesciunt beatae non veniam, impedit cum.
-            Ab omnis inventore sed assumenda! Necessitatibus temporibus aperiam, officiis obcaecati asperiores corrupti maxime illo debitis delectus laudantium eveniet vitae iusto. Ex alias cum asperiores aperiam nihil repellat corporis optio officiis
-            libero velit !</p>
-        <button>View Paris</button>
-        <div class="bot">11th</div>
+    <div class="parent">
+
+        <div class="child"></div>
+        <div style="background-color: tomato;" class="child"></div>
+        <div style="background-color: teal;" class="child"></div>
+
     </div>
-
-
 </body>
 
 </html>
