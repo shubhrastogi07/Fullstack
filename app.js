@@ -3,9 +3,8 @@ const input = document.querySelector('input')
 const div = document.querySelector('div')
 div.innerHtml = localStorage.getItem('InputValue')
 
-button.addEventListener('click', (req, res) => {
-        localStorage.setItem('InputValue', input.value)
-        div.innerHTML = "dafdafsd"
-    })
-    // div.innerHtml = localStorage.getItem('InputValue')
-    // console.log(localStorage.getItem("InputValue"))
+const arr = [1, 2, 3, 4, 5]
+
+console.log()
+localStorage.setItem('val', JSON.stringify(arr))
+console.log(JSON.parse(localStorage.getItem('val')))
