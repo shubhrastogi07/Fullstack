@@ -1,8 +1,15 @@
-const path = require('path')
+const fs = require('fs')
 
-console.log(path.resolve('./app.js'))
-console.log(path.relative('./', "utilies.js"))
-console.log(path.extname('./app.js'))
-console.log(path.dirname('./Full Stack/app.js'))
-console.log(__dirname)
-console.log(path.join(__dirname, 'app.js'))
+// 
+
+
+// console.log('I am a random log')
+fs.writeFile('./test.txt', "Hello", (error) => {
+        if (error) console.log(error)
+    })
+    //console.log(fs.readFileSync('./test.txt', 'utf-8'))
+fs.readFile('./test.txt', 'utf-8', (error, data) => {
+    if (error) console.log(error)
+    else console.log(data)
+    console.log(typeof data)
+})
