@@ -1,40 +1,27 @@
-// const http = require('http')
-// const fs = require('fs')
-// const path = require('path')
-
-// const server = http.createServer((request, response) => {
-//     //     // console.log(request.headers)
-//     //     //console.log(request.method)
-//     //     const markup = fs.readFileSync(path.resolve('./index.html'))
-//     //     response.write(markup)
-//     //     response.end()
-//     // })
-//     // // console.log(server)
-//     const { url } = request
-//     if (url == '/login') {
-//         response.write('<h1>Login</h1>')
-//         response.end()
-//     }
-//     if (url == '/signup') {
-//         response.write('<h1>SignUp</h1>')
-//         response.end()
-//     }
-// })
-
-// server.listen(3000, () => {
-//     console.log(`Server listening at PORT:${3000}`)
-// })
-const data = [{ Name: "Shubh Rastogi" }, { Name: "Shubh Rastogi" }, { Name: "Shubh Rastogi" }]
 const express = require('express')
+const PORT = 3000
 const app = express()
-app.get('/', (req, res) => {
-    console.log(req.url)
-    res.send('this is response')
+    // const verify = (req, res, next) => {
+    //     console.log(req.headers['user-agent'])
+    //     if (req.headers['user-agent'] === "Thunder Client (https://www.thunderclient.io)") next()
+    //     else res.send('Blocked')
+    // }
+
+const isAdmin = (req, res, next) => {
+    if (req.headers.admin === 'true') next()
+    else res.send("UNAUTHORISED")
+}
+
+
+app.get('/public', (req, res) => {
+    console.log(req.headers)
+    res.send(`I'm a public route`)
 })
-app.get('/Names', (req, res) => {
-    console.log(req.url)
-    res.send(data)
+
+app.get('/private', isAdmin, (req, res) => {
+    res.send(`I'm a admin route`)
 })
-app.listen(3000, () => {
-    console.log('server Listening at port 3000')
+
+app.listen(PORT, () => {
+    console.log(`server Listening at port ${PORT}`)
 })
