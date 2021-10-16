@@ -1,30 +1,55 @@
 const express = require('express')
-const PORT = 3000
 const app = express()
-    //     // const verify = (req, res, next) => {
-    //     //     console.log(req.headers['user-agent'])
-    //     //     if (req.headers['user-agent'] === "Thunder Client (https://www.thunderclient.io)") next()
-    //     //     else res.send('Blocked')
-    //     // }
+const PORT = 3000
 
-// const isAdmin = (req, res, next) => {
-//     if (req.headers.admin === 'true') next()
-//     else res.send("UNAUTHORISED")
-// }
-
-
-// app.get('/public', (req, res) => {
-//     console.log(req.headers)
-//     res.send(`I'm a public route`)
-// })
-
-// app.get('/private', isAdmin, (req, res) => {
-//     res.send(`I'm a admin route`)
-// })
 app.use(express.json())
-app.post('/signup', (req, res) => {
-    console.log(req.body)
-    res.send('dadada')
+
+const token = "TOP_SECRET"
+let Products = [{ name: 'iPhone12 Case', Price: '999' }, { name: 'iPhone12pro Case', Price: '1499' }, { name: 'iPhone12proMax Case', Price: '1999' }, { name: 'iPhone12Mini Case', Price: '799' }]
+
+const validator = (req, res, next) => {
+    const { name, Price } = req.body
+    if (!name || !Price) res.json({ error: "Validation failed" })
+    else next()
+
+}
+const isAuthorized = (req, res, next) => {
+    if (req.headers.authorisation === token) next()
+    else res.json({ error: "Unauthorised" })
+
+}
+
+
+//----------Public Routes------------------
+//Get Route
+// Send all Products
+app.get('/products', (req, res) => {
+    res.json({ Products })
+})
+
+//---------Private Route----------------------
+app.post('/products/add', isAuthorized, validator, (req, res) => {
+
+    console.log(req.body.Price)
+    const { name, Price } = req.body
+    Products.push({
+        name,
+        Price,
+    })
+
+    res.send('product is Added')
+
+})
+
+//-------------Authentication-----------------
+app.post('/auth', (req, res) => {
+    if (email === 'admin@123mail.com' && password === 'password') {
+        res.send({ token })
+    } else {
+        res.send({
+            message: "Unauthorised"
+        })
+    }
 })
 
 app.listen(PORT, () => {
